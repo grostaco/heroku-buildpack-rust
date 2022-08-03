@@ -144,6 +144,12 @@ else
   echo "-----> Skipping Cargo build"
 fi
 
+echo "-----> Installing Trunk"
+cargo install --locked trunk
+echo "-----> Building static files using Trunk"
+cd "$BUILD_DIR/frontend"
+trunk build --release 
+
 # Install diesel so we can use it for migrations
 if [ $RUST_INSTALL_DIESEL -eq 1 ]; then
   echo "-----> Installing diesel"
