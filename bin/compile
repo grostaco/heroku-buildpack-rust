@@ -149,7 +149,7 @@ if [ $RUST_SKIP_BUILD -ne 1 ]; then
   
   echo "-----> Building static files using Trunk"
   cd "$BUILD_DIR/frontend"
-  trunk build --release --dist "../target/release/backend/static"
+  trunk build --release --dist "../target/release/static"
 else
   echo "-----> Skipping Cargo build"
 fi
